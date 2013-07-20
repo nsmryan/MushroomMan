@@ -1,0 +1,50 @@
+if (global.mushroomman_debug)show_debug_message("mushroomman: fireball");
+
+vspeed+=2;
+
+if (global.object_direction==180)
+{
+  sprite_index = spr_mushroom_fireball_reverse;
+}
+
+if (global.object_direction==0)
+{
+  sprite_index=spr_mushroom_fireball;
+}
+
+//check for droplet
+if global.droplet_flag==true && global.object_direction==0
+{
+sprite_index=spr_mushroom_fireball_droplet;
+}
+
+if global.droplet_flag==true && global.object_direction==180
+{
+sprite_index=spr_mushroom_fireball_droplet_reverse;
+}
+
+if (image_index == image_number-1) 
+{
+  instance_create(x, y, obj_fireball);
+  next_state=scr_falling;
+  return(state_next);
+}
+
+
+
+if (keyboard_check(vk_left))  
+{
+  x -= 4;
+  global.object_direction=180;
+  sprite_index=spr_mushroom_fireball_reverse;
+}
+
+if (keyboard_check(vk_right)) 
+{
+  global.object_direction=0;
+  x += 4;
+  sprite_index=spr_mushroom_fireball;
+}
+
+
+return(state_continue);
