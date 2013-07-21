@@ -25,14 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.mushroomman_debug = false;
-
-sprite_index = spr_empty;
-
-jump_time = 0;
-idle_counter = 0;
-just_created = true
-
+            <string>
 global.DISPERSE_SCALE = 0.3;
 
 global.RANDOM_SCALE = 5;
@@ -45,12 +38,23 @@ global.onwall_flag = false;
 global.wallgrab_flag = false;
 global.droplet_flag = false;
 
+global.object_direction = 0;
+
+
+
+global.mushroomman_debug = false;
+
+sprite_index = spr_empty;
+
+jump_time = 0;
+idle_counter = 0;
+just_created = true
+
 state_index = scr_creation;
 state_machine_initialized = 0;
 
 mushroom_direction = 0;
 droplet_flag = false;
-global.object_direction = 0;
 
 view_visible[0] = true;
 view_visible[1] = false;
@@ -301,6 +305,48 @@ global.last_sprite = image_index;
 
 
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_firemage_fireball">
+      <action>
+        <libid>1</libid>
+        <id>601</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>9</kind>
+            <script>kill_mushroomman</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
           </argument>
         </arguments>
       </action>

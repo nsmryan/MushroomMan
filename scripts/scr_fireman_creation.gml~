@@ -1,4 +1,7 @@
-if (global.fireman_debug)show_debug_message("fireman: creation");
+if (global.fireman_debug)show_debug_message("fireman creation");
+
+MAX_SEE_HEIGHT = 100;
+MAX_SEE_DIST = 200;
 
 sprite_index = spr_fireman_creation;
 

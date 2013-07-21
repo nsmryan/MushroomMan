@@ -1,6 +1,21 @@
 if (global.mushroomman_debug)show_debug_message("mushroomman: falling");
-vspeed += 2;
 
+if state_time < 2
+{
+  vspeed += .5;
+}
+else if state_time < 5 
+{
+  vspeed += 1;
+}
+else if state_time < 8
+{
+  vspeed += 1.5;
+}
+else
+{
+  vspeed += 2;
+}
 
 //if there is something beneath him, return to default
 if (!place_free(x, y + 1))
@@ -25,8 +40,7 @@ if (hspeed < 0)
 {
   sprite_index = spr_mushroom_falling_reverse;
 }
-
-if (hspeed>0)
+else
 {
   sprite_index = spr_mushroom_falling;
 }
@@ -124,5 +138,5 @@ if (keyboard_check(vk_shift) && global.droplet_flag == true)
 
 
 //otherwise continue falling
-next_state = scr_falling;
-return(state_next);
+
+return(state_continue);

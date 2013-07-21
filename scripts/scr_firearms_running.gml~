@@ -48,11 +48,6 @@ if instance_exists(obj_mushroomman)
     return(state_next);
   }
 }
-else
-{
-  next_state = scr_firearms_sniffing;
-  return(state_next);
-}
  
 if place_meeting(x + 50, y, obj_mushroomman)
 {

@@ -9,22 +9,39 @@ if (place_free(x, y + 3))
 }
 
 /* check keyboard inputs */
-if (keyboard_check(vk_left))  
+if (keyboard_check_pressed(vk_left))
 {
-  hspeed -= 3;
   global.object_direction = 180;
 }
-
-if (keyboard_check(vk_right)) 
+else if (keyboard_check_pressed(vk_right))
 {
   global.object_direction = 0;
-  hspeed += 3;
+}
+else if (keyboard_check(vk_left))
+{
+ global.object_direction = 180;
+}
+else if (keyboard_check(vk_right))
+{
+ global.object_direction = 0;
+}
+
+if (keyboard_check(vk_left)) || (keyboard_check(vk_right)) 
+{
+  if (global.object_direction == 0)
+  {
+    hspeed += 3;
+  }
+  else
+  {
+    hspeed -= 3;  
+  }
 }
 
 if (keyboard_check_pressed(vk_up)) 
 {
   y -= 3;
-vspeed-=5;
+  vspeed-=5;
   next_state = scr_jumping;
   return(state_next);
 }

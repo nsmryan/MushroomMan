@@ -1,12 +1,19 @@
-if (global.firearms_debug)show_debug_message("firearms: waiting");
+if (global.firearms_debug)show_debug_message("firearms: sniffing");
 
 hspeed = 0;
 vspeed = 0;
 
+//go to idle after 100 frames
+if (state_time > 100)
+{
+  next_state = scr_firearms_idle;
+  return(state_next);
+}
 
+//sprite
 if (blackened)
 {
-  if (firearms_direction == 180)
+  if (firearms_direction == 0) 
   {
     sprite_index = spr_firearms_waiting_blackened_reverse;
   }
@@ -17,7 +24,7 @@ if (blackened)
 }
 else
 {
-  if (firearms_direction == 180)
+  if (firearms_direction == 0)
   {
     sprite_index = spr_firearms_waiting_reverse;
   }
@@ -28,6 +35,7 @@ else
 }
 
 
+//line of sight
 if instance_exists(obj_mushroomman)
 {
   if (scr_firearms_look())
@@ -37,4 +45,4 @@ if instance_exists(obj_mushroomman)
   }
 }
 
-return(state_continue);
+return(state_continue)

@@ -25,9 +25,9 @@ else if (firearms_direction == 180) && blackened
 
 
 
-if state_time > 15
+if state_time>15
 {
-  next_state = scr_firearms_idle;
+  next_state=scr_firearms_idle;
   return(state_next);
 }
 

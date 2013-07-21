@@ -25,18 +25,22 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.firearms_debug = false;
+            <string>global.firearms_debug = true;
+
+MAX_SEE_HEIGHT = 100;
+MAX_SEE_DIST = 300;
 
 //starts out going to the left
-direction_flag=false;
+direction_flag = false;
+
 //starts out ignited
-blackened=false;
+blackened = false;
+
 //set the blackened counter to 0
-blackened_step=0;
+blackened_step = 0;
 
 state_machine_initialized = 0;
-
-global.firearms_debug = false;
+firearms_direction = 0;
 </string>
           </argument>
         </arguments>

@@ -31,11 +31,12 @@ MAX_SPEED = 0.01;
 MIN_SPEED = -1 * MAX_SPEED;
 MAX_DIST = 10;
 
-move_to_spawn = false;
+SWARM_MAX_SPEED = 7;
+SWARM_MIN_SPEED = -1 * SWARM_MAX_SPEED;
 
 view_visible[0] = true;
 view_visible[1] = false;
-seeking_flag=false;
+seeking_flag = false;
 </string>
           </argument>
         </arguments>
@@ -58,16 +59,17 @@ seeking_flag=false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>hspeed *= 0.8;
+vspeed *= 0.8;
+
 mid_x = (x + 10);
 mid_y = (y + 10);
 
 //spawning
-if (keyboard_check(vk_shift) &amp;&amp; seeking_flag==false &amp;&amp; (place_meeting(x,y+3, obj_spawn) or place_meeting(x,y+3, obj_dirt_spawn) or place_meeting(x,y+3, obj_dirt_slant_spawn)) &amp;&amp; !place_meeting(x, y, obj_collision))
+if (keyboard_check(vk_shift) &amp;&amp; (place_meeting(x, y + 5, obj_spawn) or place_meeting(x, y + 5, obj_dirt_spawn) or place_meeting(x,y+3, obj_dirt_slant_spawn)) &amp;&amp; !place_meeting(x, y, obj_collision))
 {
   instance_change(obj_mushroomman, true);
 }
-
 
 //spores
 
@@ -89,67 +91,130 @@ for (i = 0; i &lt; global.NUM_SPORES; i += 1)
   }
 }
 
-hspeed = min(MAX_SPEED, max(MIN_SPEED, hspeed));
-vspeed = min(MAX_SPEED, max(MIN_SPEED, vspeed));
-
 
 //movement
 if (keyboard_check(vk_up)) 
 {
   vspeed -= 6;
-  seeking_flag=false;
-  obj_goal.solid = true;
-  move_to_spawn = false;
+  seeking_flag = false;
 }
 
 if (keyboard_check(vk_down)) 
 {
   vspeed += 5;
-  seeking_flag=false;
-  obj_goal.solid = true;
-  move_to_spawn = false;
+  seeking_flag = false;
 }
 
 if (keyboard_check(vk_right)) 
 {
   hspeed += 5;
-  seeking_flag=false;
-  obj_goal.solid = true;
-  move_to_spawn = false;
+  seeking_flag = false;
 }
 
 if (keyboard_check(vk_left)) 
 {
   hspeed -= 5;
-  seeking_flag=false;
-  obj_goal.solid = true;
-  move_to_spawn = false;
+  seeking_flag = false;
 }
 
 if (keyboard_check_pressed(vk_tab))
 {
-  seeking_flag=true;
-  move_to_spawn = true;
-  obj_goal.solid = false;
-}
-
-if x == obj_lastspawn.x &amp;&amp; y == obj_lastspawn.y
-{
-  seeking_flag=false;
+  seeking_flag = true;
 }
 
 epsilon = 0.0001;
 
-if (move_to_spawn)
+if (seeking_flag)
 {
-  move_towards_point(obj_lastspawn.x, obj_lastspawn.y, 10);
-  if ((abs(x - obj_lastspawn.x) &lt; epsilon) &amp;&amp; (abs(y - obj_lastspawn.y) &lt; epsilon))
+  move_towards_point(obj_lastspawn.x, obj_lastspawn.y, SWARM_MAX_SPEED+5);
+  if (distance_to_point(obj_lastspawn.x, obj_lastspawn.y - 10) &lt; epsilon)
   {
-    solid = true;
+    seeking_flag = false;
   }
 }
 
+hspeed = min(SWARM_MAX_SPEED, max(SWARM_MIN_SPEED, hspeed));
+vspeed = min(SWARM_MAX_SPEED, max(SWARM_MIN_SPEED, vspeed));
+
+if (seeking_flag)
+{
+  solid = false;
+}
+else
+{
+  solid = true;
+}
 </string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_collision">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+if (!seeking_flag)
+{
+    if (!place_free(x + hspeed, y))
+    {
+        if (hspeed &lt;= 0)move_contact_solid(180, abs(hspeed));
+        if (hspeed &gt;  0)move_contact_solid(0,   abs(hspeed));
+        hspeed = 0;
+    }
+      
+    if (!place_free(x, y + vspeed))
+    {
+        if (vspeed &lt;= 0)move_contact_solid(90,  abs(vspeed));
+        if (vspeed &gt;  0)move_contact_solid(270, abs(vspeed));
+        vspeed = 0;
+    }
+    
+    if (!place_free(x + hspeed, y + vspeed))
+    {
+        hspeed = 0;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="76">
+      <action>
+        <libid>1</libid>
+        <id>202</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_change_object</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>10</kind>
+            <object>obj_mushroomman</object>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>1</string>
           </argument>
         </arguments>
       </action>
@@ -166,5 +231,8 @@ if (move_to_spawn)
   <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
   <PhysicsObjectAwake>-1</PhysicsObjectAwake>
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
-  <PhysicsShapePoints/>
+  <PhysicsShapePoints>
+    <point>0,0</point>
+    <point>22,22</point>
+  </PhysicsShapePoints>
 </object>

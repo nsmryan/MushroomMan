@@ -7,6 +7,13 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprites name="Other">
+      <sprites name="particles">
+        <sprite>sprites\spr_dust</sprite>
+        <sprite>sprites\spr_fire_3</sprite>
+        <sprite>sprites\spr_fire_4</sprite>
+        <sprite>sprites\spr_fire_1</sprite>
+        <sprite>sprites\spr_fire_2</sprite>
+      </sprites>
       <sprite>sprites\spr_droplet</sprite>
       <sprite>sprites\spr_fire1</sprite>
       <sprite>sprites\spr_woman</sprite>
@@ -130,6 +137,9 @@
         <sprite>sprites\spr_firearms_transition</sprite>
         <sprite>sprites\spr_firearms_resting</sprite>
       </sprites>
+      <sprites name="firemage">
+        <sprite>sprites\spr_firemage</sprite>
+      </sprites>
     </sprites>
     <sprites name="environment">
       <sprite>sprites\spr_shroom_6</sprite>
@@ -167,6 +177,7 @@
       <script>scripts\scr_created.gml</script>
       <script>scripts\scr_doublejump.gml</script>
       <script>scripts\scr_falling.gml</script>
+      <script>scripts\scr_firearms_wandering.gml</script>
     </scripts>
     <scripts name="Frog States">
       <script>scripts\scr_frog_leaping.gml</script>
@@ -187,8 +198,15 @@
       <script>scripts\scr_firearms_look.gml</script>
     </scripts>
     <script>scripts\kill_mushroomman.gml</script>
+    <scripts name="firemage">
+      <script>scripts\scr_firemage_idle.gml</script>
+      <script>scripts\scr_firemage_look.gml</script>
+      <script>scripts\scr_firemage_attacking.gml</script>
+      <script>scripts\scr_firemage_teleporting.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
+    <object>objects\obj_firemage_fireball</object>
     <objects name="tiles">
       <object>objects\obj_collision</object>
       <object>objects\obj_collision_slant</object>
@@ -241,12 +259,16 @@
     <object>objects\obj_dying</object>
     <objects name="mobs">
       <object>objects\obj_firearms</object>
+      <object>objects\obj_firemage</object>
       <object>objects\obj_fireman</object>
       <object>objects\obj_frog</object>
     </objects>
     <objects name="Particles">
       <object>objects\obj_particle_wallslide</object>
+      <object>objects\obj_particle_footfall</object>
+      <object>objects\obj_particle_fire</object>
       <object>objects\obj_particle_force</object>
+      <object>objects\obj_particle_fireball</object>
     </objects>
   </objects>
   <rooms name="rooms">

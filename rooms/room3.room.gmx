@@ -86,7 +86,6 @@ instance_create(1,1, obj_particle_wallslide)</code>
     <instance objName="obj_water_surface" x="480" y="448" name="inst_E63357B5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision" x="352" y="452" name="inst_36343183" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision" x="608" y="451" name="inst_ADBBBB10" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_fireman" x="0" y="256" name="inst_1D4E275F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision" x="640" y="451" name="inst_3AC93052" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision" x="672" y="451" name="inst_86315745" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision" x="704" y="451" name="inst_806E1607" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -182,22 +181,25 @@ instance_create(1,1, obj_particle_wallslide)</code>
     <instance objName="obj_dirt" x="864" y="160" name="inst_D70097FB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_grass" x="864" y="128" name="inst_B2BE9233" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision" x="864" y="132" name="inst_164F4A3D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_firearms" x="512" y="160" name="inst_49A27B54" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_flytrap" x="600" y="366" name="inst_B094E552" locked="0" code="" scaleX="0.89473682641983" scaleY="0.873684227466583" colour="4294967295" rotation="0"/>
-    <instance objName="obj_lastspawn" x="256" y="192" name="inst_34E56644" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_flytrap" x="305" y="371" name="inst_B094E552" locked="0" code="" scaleX="0.894737005233765" scaleY="0.873683989048004" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision_slant" x="448" y="420" name="inst_C2D1F12E" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spawn" x="416" y="416" name="inst_A617D48A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shroom_6" x="835" y="413" name="inst_61986959" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shroom_6" x="575" y="364" name="inst_FD429044" locked="0" code="" scaleX="1.14286005496979" scaleY="1.02128005027771" colour="4294967295" rotation="180"/>
     <instance objName="obj_shroom_6" x="617" y="350" name="inst_FB5C7C37" locked="0" code="" scaleX="0.714286029338837" scaleY="1.10416662693024" colour="4294967295" rotation="200"/>
     <instance objName="obj_shroom_6" x="513" y="348" name="inst_029464C6" locked="0" code="" scaleX="0.1875" scaleY="0.666666984558105" colour="4294967295" rotation="180"/>
-    <instance objName="obj_shroom_5" x="408" y="377" name="inst_2776F14B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_shroom_5" x="396" y="374" name="inst_2776F14B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shroom_3" x="283" y="422" name="inst_45644709" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_shroom_2" x="294" y="334" name="inst_9AEC2521" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_shroom_2" x="545" y="330" name="inst_9AEC2521" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shroom_1" x="856" y="83" name="inst_73CB7548" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_shroom_10" x="503" y="425" name="inst_2AC29D87" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_spiralplant" x="748" y="336" name="inst_4BE5C2B5" locked="0" code="" scaleX="1.61000001430511" scaleY="1.5" colour="4294967295" rotation="335"/>
-    <instance objName="obj_woman" x="137" y="34" name="inst_51ADAEB7" locked="0" code="" scaleX="2.57291674613953" scaleY="2.70921993255615" colour="4294967295" rotation="0"/>
+    <instance objName="obj_spiralplant" x="79" y="337" name="inst_4BE5C2B5" locked="0" code="" scaleX="1.61000001430511" scaleY="1.5" colour="4294967295" rotation="335"/>
+    <instance objName="obj_woman" x="192" y="256" name="inst_51ADAEB7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_particle_fire" x="768" y="288" name="inst_55F4330D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_particle_footfall" x="576" y="128" name="inst_A301B527" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_particle_fireball" x="32" y="128" name="inst_340CA645" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_firearms" x="485" y="162" name="inst_9D7D89F8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_waterdroplet" x="32" y="192" name="inst_0A1B18CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

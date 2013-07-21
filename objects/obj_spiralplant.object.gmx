@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>eating=false;
+            <string>global.debug_spiralplant = true;
+
+eating = false;
 
 </string>
           </argument>
@@ -49,38 +51,36 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if eating==false 
+            <string>if (!eating)
 {
-  image_speed = 0;
-  image_index = 0;
-}
-
-
-
-if (place_meeting(x+10, y-10, obj_mushroomman) or place_meeting(x-10, y-10, obj_mushroomman)) &amp;&amp; eating == false 
+    image_speed = 0;
+    image_index = 0;
+      
+    //if hits mushroomman
+    if (place_meeting(x + 10, y - 10, obj_mushroomman) or place_meeting(x - 10, y - 10, obj_mushroomman))
+    {
+      eating = true;
+    }
+}    
+else
 {
-  eating=true;
-  image_index=0;
-}
-
-if image_index &lt; 5 &amp;&amp; eating==true
-{
-  image_speed = 1;
-}
-
-if eating==true &amp;&amp; image_index == 5  &amp;&amp; eating==true
-{
-  image_speed=.05;
-}
-
-if eating==true &amp;&amp; image_index &gt; 5  &amp;&amp; eating==true
-{
-  image_speed=.8;
-}
-
-if eating==true &amp;&amp; image_index == 7
-{
-  eating=false;
+    if (image_index &lt; 4)
+    {
+      image_speed = 1;
+    }
+    else if (image_index &gt; 4 &amp;&amp; image_index &lt; 5)
+    {
+      image_speed = 0.0001;
+    }
+    else if (image_index &gt; 5 &amp;&amp; image_index &lt; 7)
+    {
+      image_speed = 0.8;
+    }
+    else if (image_index &gt; 7)
+    {
+      eating = false;
+      image_index = 0;
+    }
 }
 </string>
           </argument>
