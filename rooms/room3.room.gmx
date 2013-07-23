@@ -195,11 +195,10 @@ instance_create(1,1, obj_particle_wallslide)</code>
     <instance objName="obj_shroom_10" x="503" y="425" name="inst_2AC29D87" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_spiralplant" x="79" y="337" name="inst_4BE5C2B5" locked="0" code="" scaleX="1.61000001430511" scaleY="1.5" colour="4294967295" rotation="335"/>
     <instance objName="obj_woman" x="192" y="256" name="inst_51ADAEB7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_particle_fire" x="768" y="288" name="inst_55F4330D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_particle_footfall" x="576" y="128" name="inst_A301B527" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_particle_fire" x="32" y="192" name="inst_55F4330D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_particle_footfall" x="32" y="64" name="inst_A301B527" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_particle_fireball" x="32" y="128" name="inst_340CA645" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_firearms" x="485" y="162" name="inst_9D7D89F8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_waterdroplet" x="32" y="192" name="inst_0A1B18CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
