@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.firearms_debug = true;
+            <string>global.firearms_debug = false;
 
 MAX_SEE_HEIGHT = 100;
 MAX_SEE_DIST = 300;

@@ -10,8 +10,8 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code>instance_create(1,1, obj_particle_force)
-instance_create(1,1, obj_particle_wallslide)</code>
+  <code>instance_create(1,1, obj_particle_force);
+instance_create(1,1, obj_particle_wallslide);</code>
   <enableViews>0</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <makerSettings>

@@ -34,8 +34,8 @@ MAX_DIST = 10;
 SWARM_MAX_SPEED = 7;
 SWARM_MIN_SPEED = -1 * SWARM_MAX_SPEED;
 
-view_visible[0] = true;
-view_visible[1] = false;
+view_visible[0] = false;
+view_visible[1] = true;
 seeking_flag = false;
 </string>
           </argument>

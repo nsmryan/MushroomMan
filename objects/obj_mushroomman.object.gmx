@@ -42,7 +42,7 @@ global.object_direction = 0;
 
 
 
-global.mushroomman_debug = false;
+global.mushroomman_debug = true;
 
 sprite_index = spr_empty;
 
