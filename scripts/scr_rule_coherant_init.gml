@@ -1,1 +1,1 @@
-coherantForce = argument0;
+swarm.coherantForce = argument0;
