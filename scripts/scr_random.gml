@@ -6,8 +6,12 @@ for (w = 0; w < swarm.width; w += 1)
     if (((w * swarm.height) + h) >= swarm.numInds)break;
     vVel = ds_grid_get(swarm.vspeedGrid, w, h);
     hVel = ds_grid_get(swarm.hspeedGrid, w, h);
-    vVel += swarm.randomForce * random_range(-1, 1);
-    hVel += swarm.randomForce * random_range(-1, 1);  
+    
+    dir = degtorad(random(360));
+    
+    vVel += swarm.randomForce * sin(dir);
+    hVel += swarm.randomForce * cos(dir);  
+    
     ds_grid_set(swarm.vspeedGrid, w, h, vVel);
     ds_grid_set(swarm.hspeedGrid, w, h, hVel);
   }  

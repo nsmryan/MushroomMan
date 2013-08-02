@@ -11,8 +11,8 @@ swarm = instance_create(x, y, obj_swarm);
 width = length;
 height = length;
 
-swarm.width = length;
-swarm.height = length;
+swarm.width = width;
+swarm.height = height;
 swarm.radius = radius;
 swarm.xGrid = ds_grid_create(width, height);
 swarm.yGrid = ds_grid_create(width, height);
