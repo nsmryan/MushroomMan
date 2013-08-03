@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="3" enumb="0">
+    <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -25,19 +25,26 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-
-for (w = 0; w &lt; width; w += 1)
+            <string>for (w = 0; w &lt; width; w += 1)
 {
   for (h = 0; h &lt; height; h += 1)
   {
-    ind = ds_grid_get(indGrid, w, h);
-    xPos = ds_grid_get(swarm.indGrid,    w, h);
-    yPos = ds_grid_get(swarm.indGrid,    w, h);
-    ind.x = xPos;
-    ind.y = yPos;
+    ind  = ds_grid_get(indGrid,     w, h);
+    xPos = ds_grid_get(xGrid,       w, h);
+    yPos = ds_grid_get(yGrid,       w, h);
+    vVel =  ds_grid_get(vspeedGrid, w, h);
+    hVel =  ds_grid_get(hspeedGrid, w, h);
+    
+    //TODO limit speed.
+    
+    ind.x = xPos + hVel;
+    ind.y = yPos + vVel;
+    
+    ds_grid_set(xGrid, w, h, xPos);
+    ds_grid_set(yGrid, w, h, yPos);
   }
 }
+
 </string>
           </argument>
         </arguments>

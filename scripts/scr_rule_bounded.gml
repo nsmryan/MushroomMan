@@ -1,19 +1,27 @@
 
-
-for (w = 0; w < width; w += 1)
+for (w = 0; w < swarm.width; w += 1)
 {
-  for (h = 0;  h < height; h += 1)
+  for (h = 0;  h < swarm.height; h += 1)
   {
-    xPos = ds_grid_get(xGrid, w, h);
-    yPos = ds_grid_get(yGrid, w, h);
+    if (((w * swarm.height) + h) > swarm.numInds)break;
+    
+    xPos = ds_grid_get(swarm.xGrid, w, h);
+    yPos = ds_grid_get(swarm.yGrid, w, h);
+    
+    ind = ds_grid_get(swarm.indGrid, w, h);
+    
     dist = abs(point_distance(x, y, xPos, yPos));
-    if (abs(dist) > radius)
+    
+    if (dist > swarm.radius)
     {
-      scaling = dist - radius;
+      scaling = dist - swarm.radius;
       xPart = (x - xPos) / dist;
       yPart = (y - yPos) / dist;
-      ds_grid_set(xGrid, w, h, xPos + xPart * scaling);
-      ds_grid_set(yGrid, w, h, yPos + yPart * scaling);
+      ind.x = xPos + xPart * scaling;
+      ind.y = yPos + yPart * scaling;
+      ds_grid_set(swarm.xGrid, w, h, ind.x);
+      ds_grid_set(swarm.yGrid, w, h, ind.y);
     }
   }  
 }
+
