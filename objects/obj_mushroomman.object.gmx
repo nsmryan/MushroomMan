@@ -26,12 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>
-global.DISPERSE_SCALE = 0.3;
-
-global.RANDOM_SCALE = 5;
-global.COHESION_SCALE = 0.1;
-
-global.NUM_SPORES = 400;
 global.offwalltotheright_flag = false;
 global.offwalltotheleft_flag = false;
 global.onwall_flag = false;
@@ -42,7 +36,7 @@ global.object_direction = 0;
 
 
 
-global.mushroomman_debug = true;
+global.mushroomman_debug = false;
 
 sprite_index = spr_empty;
 
@@ -77,13 +71,6 @@ obj_lastspawn.x = x;
 obj_lastspawn.y = y;
 
 global.doublejump_flag = true;
-
-
-if (global.mushroomman_debug)show_debug_message("initialized");
-
-
-
-
 </string>
           </argument>
         </arguments>
@@ -301,8 +288,7 @@ global.last_sprite = image_index;
             <string>scr_statemachine(scr_creation);
 
 
-
-
+//instance_create(x, y, obj_liquid);
 </string>
           </argument>
         </arguments>
@@ -691,6 +677,41 @@ if keyboard_check(vk_left)
           <argument>
             <kind>0</kind>
             <string>mushroom_direction</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+global.DISPERSE_SCALE = 0.3;
+
+global.RANDOM_SCALE = 5;
+global.COHESION_SCALE = 0.1;
+
+global.NUM_SPORES = 400;
+
+instance_create(obj_mushroomman.x, obj_mushroomman.y, obj_particle_wallslide);
+instance_create(obj_mushroomman.x, obj_mushroomman.y, obj_particle_footfall);
+instance_create(obj_mushroomman.x, obj_mushroomman.y, obj_particle_force);
+
+if (global.mushroomman_debug)show_debug_message("initialized");
+</string>
           </argument>
         </arguments>
       </action>

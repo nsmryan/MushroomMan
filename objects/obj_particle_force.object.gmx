@@ -26,23 +26,23 @@
           <argument>
             <kind>1</kind>
             <string>
-magicfire = part_type_create()
-part_type_shape(magicfire,pt_shape_spark)
-part_type_size(magicfire,0.05,0.09,0,-0.02)
-part_type_scale(magicfire,1,1)
-part_type_color2(magicfire,c_aqua, 16776960)
-part_type_alpha1(magicfire,0.75)
-part_type_speed(magicfire,1,6,0,0)
-part_type_direction(magicfire,0,270,0,5)
-part_type_gravity(magicfire,5,270)
-part_type_orientation(magicfire,0,0,0,0,1)
-part_type_blend(magicfire,1)
+magicfire = part_type_create();
+part_type_shape(magicfire, pt_shape_spark);
+part_type_size(magicfire, 0.05, 0.09, 0, -0.02);
+part_type_scale(magicfire, 1, 1);
+part_type_color2(magicfire, c_aqua, 16776960);
+part_type_alpha1(magicfire, 0.75);
+part_type_speed(magicfire, 1, 6, 0, 0);
+part_type_direction(magicfire, 0, 270, 0, 5);
+part_type_gravity(magicfire, 5, 270);
+part_type_orientation(magicfire, 0, 0, 0, 0, 1);
+part_type_blend(magicfire, 1);
 
-magicfire_system = part_system_create()
-part_type_life(magicfire,1,4)
-emitter1 = part_emitter_create(magicfire_system)
-part_emitter_region(magicfire_system,emitter1,x-1,x+1,y-1,y+1,ps_shape_ellipse,1)
-part_emitter_stream(magicfire_system,emitter1,magicfire,50)
+magicfire_system = part_system_create();
+part_type_life(magicfire, 1, 4);
+emitter1 = part_emitter_create(magicfire_system);
+//part_emitter_region(magicfire_system, emitter1, x-1, x+1, y-1, y+1, ps_shape_ellipse, 1);
+//part_emitter_stream(magicfire_system,emitter1,magicfire,50);
 
 
 
@@ -162,30 +162,28 @@ alarm[0]=30;
   global.magicforce_flag = false
   part_emitter_stream(magicfire_system,emitter1,magicfire,0);
 }
-
-
-if instance_exists(obj_mushroomman)
+else
 {
-if global.object_direction==0
-{
-part_emitter_region(magicfire_system,emitter1,obj_mushroomman.x+15,obj_mushroomman.x+16,obj_mushroomman.y+25,obj_mushroomman.y+26,ps_shape_ellipse,1)
-}
+  if global.object_direction==0
+  {
+    part_emitter_region(magicfire_system,emitter1,obj_mushroomman.x+15,obj_mushroomman.x+16,obj_mushroomman.y+25,obj_mushroomman.y+26,ps_shape_ellipse,1)
+  }
 
-if global.object_direction==180
-{
-part_emitter_region(magicfire_system,emitter1,obj_mushroomman.x+34,obj_mushroomman.x+35,obj_mushroomman.y+25,obj_mushroomman.y+26,ps_shape_ellipse,1)
-}
+  if global.object_direction==180
+  {
+    part_emitter_region(magicfire_system,emitter1,obj_mushroomman.x+34,obj_mushroomman.x+35,obj_mushroomman.y+25,obj_mushroomman.y+26,ps_shape_ellipse,1)
+  } 
 
 
-if   global.magicforce_flag == false
-{
-  part_emitter_stream(magicfire_system,emitter1,magicfire,0);
-}
+  if   !global.magicforce_flag
+  {
+    part_emitter_stream(magicfire_system,emitter1,magicfire,0);
+  }
 
-if   global.magicforce_flag == true
-{
-  part_emitter_stream(magicfire_system,emitter1,magicfire,50);
-}
+  if   global.magicforce_flag
+  {
+    part_emitter_stream(magicfire_system,emitter1,magicfire,50);
+  }
 }
 
 
@@ -212,7 +210,7 @@ if   global.magicforce_flag == true
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>/*
 magicfire = part_type_create()
 part_type_shape(magicfire,pt_shape_spark)
 part_type_size(magicfire,0.05,0.09,0,-0.02)
@@ -229,7 +227,9 @@ magicfire_system = part_system_create()
 part_type_life(magicfire,1,6)
 emitter1 = part_emitter_create(magicfire_system)
 part_emitter_region(magicfire_system,emitter1,x,x,y,y,ps_shape_ellipse,1)
-part_emitter_stream(magicfire_system,emitter1,magicfire,50)
+
+*/
+//part_emitter_stream(magicfire_system,emitter1,magicfire,50)
 
 
 

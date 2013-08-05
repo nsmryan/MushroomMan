@@ -40,8 +40,8 @@
     ind.x = xPos + hVel;
     ind.y = yPos + vVel;
     
-    ds_grid_set(xGrid, w, h, xPos);
-    ds_grid_set(yGrid, w, h, yPos);
+    ds_grid_set(xGrid, w, h, ind.x);
+    ds_grid_set(yGrid, w, h, ind.y);
   }
 }
 

@@ -6,6 +6,24 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprites name="backgrounds">
+      <sprite>sprites\spr_forest_8</sprite>
+      <sprite>sprites\spr_forest_7</sprite>
+      <sprite>sprites\spr_forest_6</sprite>
+      <sprite>sprites\spr_forest_5</sprite>
+      <sprite>sprites\spr_forest_4</sprite>
+      <sprite>sprites\spr_forest_3</sprite>
+      <sprite>sprites\spr_forest_2</sprite>
+      <sprite>sprites\spr_forest_1</sprite>
+      <sprite>sprites\spr_hell_1</sprite>
+      <sprite>sprites\spr_hell_2</sprite>
+      <sprite>sprites\spr_hell_3</sprite>
+      <sprite>sprites\spr_hell_4</sprite>
+      <sprite>sprites\spr_hell_5</sprite>
+      <sprite>sprites\spr_hell_6</sprite>
+      <sprite>sprites\spr_hell_7</sprite>
+      <sprite>sprites\spr_hell_8</sprite>
+    </sprites>
     <sprites name="Other">
       <sprites name="particles">
         <sprite>sprites\spr_dust</sprite>
@@ -145,6 +163,7 @@
       <sprite>sprites\spr_shroom_6</sprite>
       <sprite>sprites\spr_shroom_5</sprite>
       <sprite>sprites\spr_midground_mushroom_2</sprite>
+      <sprite>sprites\spr_waterflow</sprite>
       <sprite>sprites\spr_midground_mushroom_1</sprite>
       <sprite>sprites\spr_shroom_7</sprite>
       <sprite>sprites\spr_spiralplant</sprite>
@@ -163,6 +182,7 @@
     <background>background\background2</background>
     <background>background\background0</background>
     <background>background\background1</background>
+    <background>background\background3</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -207,9 +227,33 @@
       <script>scripts\scr_firemage_attacking.gml</script>
       <script>scripts\scr_firemage_teleporting.gml</script>
     </scripts>
+    <scripts name="rules">
+      <script>scripts\scr_rule_bounded.gml</script>
+      <script>scripts\scr_rule_coherant.gml</script>
+      <script>scripts\scr_rule_coherant_init.gml</script>
+      <script>scripts\scr_rule_id.gml</script>
+      <script>scripts\scr_random.gml</script>
+      <script>scripts\scr_random_init.gml</script>
+    </scripts>
+    <script>scripts\scr_create_swarm.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\obj_firemage_fireball</object>
+    <objects name="environment">
+      <object>objects\obj_shroom_4</object>
+      <object>objects\obj_shroom_6</object>
+      <object>objects\obj_midground_mushroom_2</object>
+      <object>objects\obj_shroom_9</object>
+      <object>objects\obj_midground_mushroom_1</object>
+      <object>objects\obj_shroom_10</object>
+      <object>objects\obj_shroom_5</object>
+      <object>objects\obj_shroom_8</object>
+      <object>objects\obj_shroom_3</object>
+      <object>objects\obj_spiralplant</object>
+      <object>objects\obj_shroom_2</object>
+      <object>objects\obj_shroom_1</object>
+      <object>objects\obj_flytrap</object>
+      <object>objects\obj_env_root</object>
+    </objects>
     <objects name="tiles">
       <object>objects\obj_collision</object>
       <object>objects\obj_collision_slant</object>
@@ -234,36 +278,6 @@
       <object>objects\obj_waves</object>
       <object>objects\obj_tile_root</object>
     </objects>
-    <object>objects\obj_goal</object>
-    <object>objects\obj_mushroomman</object>
-    <object>objects\obj_lastspawn</object>
-    <objects name="environment">
-      <object>objects\obj_shroom_4</object>
-      <object>objects\obj_shroom_6</object>
-      <object>objects\obj_midground_mushroom_2</object>
-      <object>objects\obj_shroom_9</object>
-      <object>objects\obj_midground_mushroom_1</object>
-      <object>objects\obj_shroom_10</object>
-      <object>objects\obj_shroom_5</object>
-      <object>objects\obj_shroom_8</object>
-      <object>objects\obj_shroom_3</object>
-      <object>objects\obj_spiralplant</object>
-      <object>objects\obj_shroom_2</object>
-      <object>objects\obj_shroom_1</object>
-      <object>objects\obj_flytrap</object>
-      <object>objects\obj_env_root</object>
-    </objects>
-    <object>objects\obj_spore</object>
-    <object>objects\obj_fire2</object>
-    <object>objects\obj_fire1</object>
-    <object>objects\obj_woman</object>
-    <object>objects\obj_mushroom_water</object>
-    <object>objects\obj_spores</object>
-    <object>objects\obj_waterdroplet</object>
-    <object>objects\obj_platformend</object>
-    <object>objects\obj_fireball</object>
-    <object>objects\obj_collect</object>
-    <object>objects\obj_dying</object>
     <objects name="mobs">
       <object>objects\obj_firearms</object>
       <object>objects\obj_firemage</object>
@@ -279,10 +293,49 @@
       <object>objects\obj_particle_fireball</object>
       <object>objects\obj_particle_root</object>
     </objects>
+    <objects name="background">
+      <object>objects\obj_hell_1</object>
+      <object>objects\obj_hell_2</object>
+      <object>objects\obj_hell_3</object>
+      <object>objects\obj_hell_4</object>
+      <object>objects\obj_hell_5</object>
+      <object>objects\obj_hell_6</object>
+      <object>objects\obj_hell_7</object>
+      <object>objects\obj_hell_8</object>
+      <object>objects\obj_forest_1</object>
+      <object>objects\obj_forest_2</object>
+      <object>objects\obj_forest_3</object>
+      <object>objects\obj_forest_4</object>
+      <object>objects\obj_forest_5</object>
+      <object>objects\obj_forest_6</object>
+      <object>objects\obj_forest_7</object>
+      <object>objects\obj_forest_8</object>
+    </objects>
+    <object>objects\obj_firemage_fireball</object>
+    <object>objects\obj_goal</object>
+    <object>objects\obj_mushroomman</object>
+    <object>objects\obj_lastspawn</object>
+    <object>objects\obj_spore</object>
+    <object>objects\obj_fire2</object>
+    <object>objects\obj_fire1</object>
+    <object>objects\obj_woman</object>
+    <object>objects\obj_mushroom_water</object>
+    <object>objects\obj_spores</object>
+    <object>objects\obj_waterdroplet</object>
+    <object>objects\obj_platformend</object>
+    <object>objects\obj_fireball</object>
+    <object>objects\obj_collect</object>
+    <object>objects\obj_dying</object>
     <object>objects\obj_root</object>
+    <object>objects\obj_spark</object>
+    <object>objects\obj_swarm_test</object>
+    <object>objects\obj_swarm</object>
+    <object>objects\obj_startgame</object>
+    <object>objects\obj_liquid</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\BackGround_Test_Room</room>
+    <room>rooms\room_hell</room>
+    <room>rooms\room_forest</room>
     <room>rooms\room3</room>
     <room>rooms\rm_world1</room>
     <room>rooms\rm_world2</room>

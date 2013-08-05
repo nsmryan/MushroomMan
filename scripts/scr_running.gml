@@ -127,11 +127,11 @@ if (place_free(x + hspeed, y))
 }
 else if (place_free(x + hspeed, y - max_slope))
 {
-  show_debug_message("up slope, vspeed " + string(vspeed) + " and hspeed " + string(hspeed));
-  show_debug_message("x = " + string(x) + ", y = " + string(y));
+  //show_debug_message("up slope, vspeed " + string(vspeed) + " and hspeed " + string(hspeed));
+  //show_debug_message("x = " + string(x) + ", y = " + string(y));
   y -= max_slope;
-  x += hspeed + 5*sign(hspeed);
-  //move_contact_solid(270, max_slope);
+  x += hspeed + 5 * sign(hspeed);
+  move_contact_solid(270, max_slope);
   show_debug_message("x = " + string(x) + ", y = " + string(y));
 }
 

@@ -28,11 +28,11 @@
             <string>swarm = scr_create_swarm(50, 100, 100, obj_spark);
 
 swarm.numRules = 3;
-swarm.rules[0] = scr_rule_id;//scr_rule_coherant;
+swarm.rules[0] = scr_rule_coherant;
 swarm.rules[1] = scr_random;
-swarm.rules[2] = scr_rule_id;//scr_rule_bounded;
+swarm.rules[2] = scr_rule_bounded;
 
-scr_rule_coherant_init(1);
+scr_rule_coherant_init(1, 10);
 scr_random_init(1);
 
 
@@ -65,6 +65,8 @@ for (i = 0; i &lt; swarm.numRules; i += 1)
   script = swarm.rules[i];
   script_execute(script);
 }
+
+
 </string>
           </argument>
         </arguments>

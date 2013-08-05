@@ -1,4 +1,3 @@
-
 if (swarm.coherantCount >= swarm.coherantPause)
 {
   swarm.coherantCount = 0;
@@ -24,4 +23,3 @@ for (w = 0; w < swarm.width; w += 1)
     ds_grid_set(swarm.vspeedGrid, w, h, vVel + sign(y - yPos) * swarm.coherantForce);
   }  
 }
-

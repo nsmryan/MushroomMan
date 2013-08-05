@@ -1,4 +1,3 @@
-
 for (w = 0; w < swarm.width; w += 1)
 {
   for (h = 0;  h < swarm.height; h += 1)
@@ -16,4 +15,3 @@ for (w = 0; w < swarm.width; w += 1)
     ds_grid_set(swarm.hspeedGrid, w, h, hVel);
   }  
 }
-

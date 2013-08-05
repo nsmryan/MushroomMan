@@ -40,8 +40,8 @@ part_type_blend(smoke,1)
 wallslide_system = part_system_create()
 part_type_life(smoke,1,4)
 emitter1 = part_emitter_create(wallslide_system)
-part_emitter_region(wallslide_system,emitter1,x-1,x+1,y-40,y+1,ps_shape_rectangle,1)
-part_emitter_stream(wallslide_system,emitter1,smoke,50)
+//part_emitter_region(wallslide_system,emitter1,x-1,x+1,y-40,y+1,ps_shape_rectangle,1)
+//part_emitter_stream(wallslide_system,emitter1,smoke,50)
 global.wallslide_flag = false;
 
 
@@ -211,7 +211,7 @@ if global.wallslide_flag == true
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>/*
 magicfire = part_type_create()
 part_type_shape(magicfire,pt_shape_spark)
 part_type_size(magicfire,0.05,0.09,0,-0.02)
@@ -229,7 +229,7 @@ part_type_life(magicfire,1,6)
 emitter1 = part_emitter_create(magicfire_system)
 part_emitter_region(magicfire_system,emitter1,x,x,y,y,ps_shape_ellipse,1)
 part_emitter_stream(magicfire_system,emitter1,magicfire,50)
-
+*/
 
 
 /*global.P_System=part_system_create();
