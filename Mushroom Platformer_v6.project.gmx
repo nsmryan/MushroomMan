@@ -119,6 +119,8 @@
       <sprite>sprites\spr_dirt_slant_spawn</sprite>
       <sprite>sprites\spr_dirt_slant</sprite>
       <sprite>sprites\spr_slant</sprite>
+      <sprite>sprites\spr_dirt_dry</sprite>
+      <sprite>sprites\spr_dirt_animate</sprite>
       <sprite>sprites\spr_platformend</sprite>
     </sprites>
     <sprites name="mobs">
@@ -257,6 +259,7 @@
     <objects name="tiles">
       <object>objects\obj_collision</object>
       <object>objects\obj_collision_slant</object>
+      <object>objects\obj_dirt_animate</object>
       <object>objects\obj_dirt</object>
       <object>objects\obj_dirt_slant</object>
       <object>objects\obj_dirt_slant_spawn</object>
