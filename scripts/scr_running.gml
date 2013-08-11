@@ -1,13 +1,5 @@
 if (global.mushroomman_debug)show_debug_message("mushroomman: running");
 
-vspeed += 2;
-
-if (place_free(x, y + 3))
-{
-  global.doublejump_flag = true;
-  next_state = scr_falling;
-  return(state_next);
-}
 
 /* check keyboard inputs */
 if (keyboard_check_pressed(vk_left))
@@ -73,8 +65,6 @@ if ((global.droplet_flag) && (global.object_direction == 0))
   image_speed = 0.6;
 }
 
-
-
 //check for contact with water
 if (place_meeting(x, y, obj_water_surface) or place_meeting(x, y, obj_water))
 {
@@ -90,21 +80,26 @@ vspeed = max(vspeed, -20)
 
 
 /* wall-grab */
-if (!place_free(x + 5, y) && (global.object_direction == 0) && place_free(x, y + 3))
+off_end_left_high  = position_meeting(x,                y,                     obj_collision)
+off_end_left_mid   = position_meeting(x,                y + (sprite_height/2), obj_collision)
+off_end_right_high = position_meeting(x + sprite_width, y,                     obj_collision) 
+off_end_right_mid  = position_meeting(x + sprite_width, y + (sprite_height/2), obj_collision)
+off_end_right_low  = position_meeting(x + sprite_width, y + sprite_height,     obj_collision)
+off_end_left_low   = position_meeting(x,                y + sprite_height,     obj_collision)
+
+if ((off_end_left_high && off_end_left_mid) || (off_end_right_high && off_end_right_mid))
 {
-  move_contact_solid(0, 5);
   vspeed = 0;
   hspeed = 0;
+  global.wallslide_flag = true
   next_state = scr_wallgrab;
-  return(state_next);
+  return state_next;
 }
 
-if (!place_free(x -5, y) && (global.object_direction == 180) && place_free(x, y + 1))
+if (!off_end_left_low && !off_end_right_low)
 {
-  move_contact_solid(180, 5);
-  vspeed = 0;
-  hspeed = 0;
-  next_state = scr_wallgrab;
+  global.doublejump_flag = true;
+  next_state = scr_falling;
   return(state_next);
 }
 
@@ -115,8 +110,6 @@ if ((!keyboard_check(vk_left)) && (!keyboard_check(vk_right)))
 }
 
 /* Slopes */
-max_slope = 50;
-
 if (place_free(x + hspeed, y))
 {
   if (!place_free(x + hspeed, y + max_slope))
@@ -132,10 +125,7 @@ else if (place_free(x + hspeed, y - max_slope))
   y -= max_slope;
   x += hspeed + 5 * sign(hspeed);
   move_contact_solid(270, max_slope);
-  show_debug_message("x = " + string(x) + ", y = " + string(y));
 }
-
-
 
 /*
 if (keyboard_check_pressed(vk_space))
@@ -144,38 +134,8 @@ if (keyboard_check_pressed(vk_space))
   return(state_next);
 }
 */
-   
-/*
-if !place_meeting(x+hspeed, y+5, obj_collision) && !(hspeed==0)  && place_meeting(x+hspeed, y+6, obj_collision)  //if you're moving down a slope
-{
-  if place_meeting(x, y+3, obj_collision)      //if you're on the ground
-  {
-    y += 5;                   //move down the slope
-  }
-}
-else if place_free(x+hspeed, y-5) && !(hspeed==0)           //if you're not next to a wall
-{
-  y -= 5;
-}
-*/
 
-
-/*
-if place_free(x+hspeed, y-5) && !(hspeed==0)  //check if you're next to a slope
-{
-  y -= 5;                     //move up slope
-}
-
-if place_meeting(x+hspeed, y-5, obj_collision) && !(hspeed==0)  && !place_meeting(x+hspeed, y-6, obj_collision)  //if you're moving down a slope
-{
-  if place_meeting(x, y+3, obj_collision)      //if you're on the ground
-  {
-    y -= 5;                   //move down the slope
-  }
-}
-*/
-
-return(state_continue);
+return state_continue;
 
 
 

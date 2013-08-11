@@ -3,7 +3,7 @@
   <spriteName>spr_empty</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>50</depth>
   <persistent>0</persistent>
   <parentName>obj_particle_root</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -181,7 +181,7 @@ if global.wallslide_flag == false
   part_emitter_stream(wallslide_system,emitter1,smoke,0);
 }
 
-if global.wallslide_flag == true
+if global.wallslide_flag &amp;&amp; global.sliding_down
 {
   part_emitter_stream(wallslide_system,emitter1,smoke,50);
 }

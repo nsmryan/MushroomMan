@@ -15,7 +15,7 @@ if (global.object_direction == 0)
 //check for droplet
 if global.droplet_flag && (global.object_direction == 0)
 {
-  sprite_index = spr_mushroom_fireball_droplet;
+  sprite_index=spr_mushroom_fireball_droplet;
 }
 
 if global.droplet_flag && (global.object_direction == 180)

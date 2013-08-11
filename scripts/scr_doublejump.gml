@@ -14,13 +14,12 @@ if (global.object_direction == 0)
 }
 
 //check droplet and direction, left or right
-if (global.droplet_flag == true) && (global.object_direction == 0)
+if (global.droplet_flag) && (global.object_direction == 0)
 {
   sprite_index = spr_mushroom_doublejump_droplet;
-
 }
 
-if (global.droplet_flag == true) && (global.object_direction == 180)
+if (global.droplet_flag) && (global.object_direction == 180)
 {
   sprite_index = spr_mushroom_doublejump_droplet_reverse;
 }
@@ -43,26 +42,25 @@ if (keyboard_check_pressed(vk_space))
 //check keyboard inputs
 if (keyboard_check(vk_left))  
 {
-  x -= 5;
-  global.object_direction=180;
+  hspeed -= 2;
+  global.object_direction = 180;
 }
 
 if (keyboard_check(vk_right)) 
 {
-  global.object_direction=0;
-  x += 5;
+  global.object_direction = 0;
+  hspeed += 2;
 }
 
 //move upwards for a while
-if ((state_time < 20) && (keyboard_check(vk_up)))
+if ((double_jump < DOUBLE_JUMP_MAX) && (keyboard_check(vk_up)))
 {
-  //y -= 20;
   vspeed -= 4;
+  double_jump += 1;
   return(state_continue);
 }
 else 
 { 
-  global.doublejump_flag=false;
   global.magicforce_flag = false;
   next_state = scr_falling;
   return(state_next);
@@ -77,10 +75,10 @@ if (!place_free(x, y + 1))
 
 
 //droplet throw
-if (keyboard_check(vk_shift) && global.droplet_flag==true)
+if (keyboard_check(vk_shift) && global.droplet_flag)
 {
   magicforce_flag = false;
-  next_state=scr_droplet;
+  next_state = scr_droplet;
   return(state_next);
 }
 

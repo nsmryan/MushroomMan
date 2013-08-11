@@ -238,6 +238,7 @@
       <script>scripts\scr_random_init.gml</script>
     </scripts>
     <script>scripts\scr_create_swarm.gml</script>
+    <script>scripts\scr_start_room.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="environment">
@@ -335,16 +336,17 @@
     <object>objects\obj_swarm</object>
     <object>objects\obj_startgame</object>
     <object>objects\obj_liquid</object>
+    <object>objects\obj_fountain</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\room_forest</room>
+    <room>rooms\test_level0</room>
     <room>rooms\room_hell_v2</room>
     <room>rooms\room_hell</room>
-    <room>rooms\room_forest</room>
     <room>rooms\room3</room>
     <room>rooms\rm_world1</room>
     <room>rooms\rm_world2</room>
     <room>rooms\rm_world3</room>
-    <room>rooms\test_level0</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

@@ -48,14 +48,14 @@ if (state_time>39) && idle_number>60
 //check keyboard inputs
 if (keyboard_check(vk_left))  
 {
-  global.object_direction=180;
+  global.object_direction = 180;
   next_state = scr_running;
   return(state_next);
 }
 
 if (keyboard_check(vk_right)) 
 {
-  global.object_direction=0;
+  global.object_direction = 0;
   next_state = scr_running;
   return(state_next);
 }
@@ -71,14 +71,18 @@ if (keyboard_check_pressed(vk_space))
 //jump brings to falling state
 if (keyboard_check(vk_up) && !place_free(x,y+3))
 {
-  y-=3;
-  vspeed-=5;
+  y -= 3;
+  vspeed -= 5;
   next_state = scr_jumping;
   return(state_next);
 }
 
 //if there is nothing beneath the shroom, go to falling state
-if (place_free(x, y + 3))
+off_end_left_low  = !position_meeting(x,                    y + sprite_height,     obj_collision)
+off_end_mid       = !position_meeting(x + (sprite_width/2), y + (sprite_height/2), obj_collision)
+off_end_right_low = !position_meeting(x + sprite_width,     y + sprite_height,     obj_collision) 
+
+if (off_end_left_low && off_end_mid && off_end_right_low)
 {
   next_state = scr_falling;
   return(state_next);
@@ -86,7 +90,7 @@ if (place_free(x, y + 3))
 
 
 global.idle_number = random(2);
-idle_flag=random(30);
+idle_flag = random(30);
 
 if ((idle_flag==25) && (keyboard_check(vk_nokey)))
 {

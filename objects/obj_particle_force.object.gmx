@@ -3,7 +3,7 @@
   <spriteName>spr_empty</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>50</depth>
   <persistent>0</persistent>
   <parentName>obj_particle_root</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -41,100 +41,7 @@ part_type_blend(magicfire, 1);
 magicfire_system = part_system_create();
 part_type_life(magicfire, 1, 4);
 emitter1 = part_emitter_create(magicfire_system);
-//part_emitter_region(magicfire_system, emitter1, x-1, x+1, y-1, y+1, ps_shape_ellipse, 1);
-//part_emitter_stream(magicfire_system,emitter1,magicfire,50);
 
-
-
-/*global.P_System=part_system_create();
-
-global.Particle1=part_type_create();
-part_type_shape(global.Particle1,pt_shape_pixel);            //This defines the particles shape
-part_type_size(global.Particle1,1,1,0,2);                    //This is for the size
-part_type_scale(global.Particle1,1,1);                       //This is for scaling
-part_type_color1(global.Particle1,c_white);                  //This sets its colour. There are three different codes for this
-part_type_alpha1(global.Particle1,1);                        //This is its alpha. There are three different codes for this
-part_type_speed(global.Particle1,0.50,2,-0.10,0);            //The particles speed
-part_type_direction(global.Particle1,0,359,0,20);            //The direction
-part_type_orientation(global.Particle1,0,0,0,0,1);           //This changes the rotation of the particle
-part_type_blend(global.Particle1,1);                         //This is the blend mode, either additive or normal
-part_type_life(global.Particle1,1,20);                       //this is its lifespan in steps
-
-//CREATE EVENT
-//Define and name the emitters
-global.Particle1_Emitter1=part_emitter_create(global.P_System);
-global.Particle1_Emitter2=part_emitter_create(global.P_System);
-//Set up the area that will emit particles
-part_emitter_region(global.P_System, global.Particle1_Emitter1, 0, room_width, 0, room_height, ps_shape_rectangle, ps_distr_linear);
-part_emitter_region(global.P_System, global.Particle1_Emitter2, mouse_x-10, mouse_x+10, mouse_y-10, mouse_y+10, ps_shape_ellipse, ps_distr_gaussian);
-//Set the first to stream 10 particles every step
-part_emitter_stream(global.P_System, global.Particle1_Emitter1, global.Particle1, 10);
-//This can now be forgotten as it will function until told to stop...
-//Set the alarm[0] event to burst the emitter2 particles...
-alarm[0]=30;
-
-//ALARM[0] EVENT
-//The second emitter has to move to the mouse position so...
-part_emitter_region(global.P_System, global.Particle1_Emitter2, mouse_x-10, mouse_x+10, mouse_y-10, mouse_y+10, ps_shape_ellipse, ps_distr_gaussian);
-//Now to burst 30 particles and reset the alarm[0]
-part_emitter_burst(global.P_System, global.Particle1_Emitter2, global.Particle1, 30);
-alarm[0]=30;
-
-*/
-
-
-/*spores=part_system_create();
-particle1 = part_type_create()
-part_type_shape(particle1,pt_shape_sphere)
-part_type_size(particle1,0.20,0.20,0,0.50)
-part_type_scale(particle1,1,1)
-part_type_color2(particle1,64,33023)
-part_type_alpha2(particle1,1,0.50)
-part_type_speed(particle1,0.20,0.50,0,0)
-part_type_direction(particle1,0,359,0,0)
-part_type_gravity(particle1,0.00,270)
-part_type_orientation(particle1,0,0,0,0,1)
-part_type_blend(particle1,1)
-part_type_life(particle1,0.10,30)
-
-emitter1 = part_emitter_create(spores)
-part_emitter_region(spores,emitter1,x,x+10,y,y+10,ps_shape_ellipse,ps_distr_linear)
-part_emitter_stream(spores,emitter1,particle1,.1)
-
-
-/*global.P_System=part_system_create();
-
-global.Particle1=part_type_create();
-part_type_shape(global.Particle1,pt_shape_pixel);            //This defines the particles shape
-part_type_size(global.Particle1,1,1,0,2);                    //This is for the size
-part_type_scale(global.Particle1,1,1);                       //This is for scaling
-part_type_color1(global.Particle1,c_white);                  //This sets its colour. There are three different codes for this
-part_type_alpha1(global.Particle1,1);                        //This is its alpha. There are three different codes for this
-part_type_speed(global.Particle1,0.50,2,-0.10,0);            //The particles speed
-part_type_direction(global.Particle1,0,359,0,20);            //The direction
-part_type_orientation(global.Particle1,0,0,0,0,1);           //This changes the rotation of the particle
-part_type_blend(global.Particle1,1);                         //This is the blend mode, either additive or normal
-part_type_life(global.Particle1,1,20);                       //this is its lifespan in steps
-
-//CREATE EVENT
-//Define and name the emitters
-global.Particle1_Emitter1=part_emitter_create(global.P_System);
-global.Particle1_Emitter2=part_emitter_create(global.P_System);
-//Set up the area that will emit particles
-part_emitter_region(global.P_System, global.Particle1_Emitter1, 0, room_width, 0, room_height, ps_shape_rectangle, ps_distr_linear);
-part_emitter_region(global.P_System, global.Particle1_Emitter2, mouse_x-10, mouse_x+10, mouse_y-10, mouse_y+10, ps_shape_ellipse, ps_distr_gaussian);
-//Set the first to stream 10 particles every step
-part_emitter_stream(global.P_System, global.Particle1_Emitter1, global.Particle1, 10);
-//This can now be forgotten as it will function until told to stop...
-//Set the alarm[0] event to burst the emitter2 particles...
-alarm[0]=30;
-
-//ALARM[0] EVENT
-//The second emitter has to move to the mouse position so...
-part_emitter_region(global.P_System, global.Particle1_Emitter2, mouse_x-10, mouse_x+10, mouse_y-10, mouse_y+10, ps_shape_ellipse, ps_distr_gaussian);
-//Now to burst 30 particles and reset the alarm[0]
-part_emitter_burst(global.P_System, global.Particle1_Emitter2, global.Particle1, 30);
-alarm[0]=30;
 </string>
           </argument>
         </arguments>
@@ -160,29 +67,29 @@ alarm[0]=30;
             <string>if !instance_exists(obj_mushroomman)
 {
   global.magicforce_flag = false
-  part_emitter_stream(magicfire_system,emitter1,magicfire,0);
+  part_emitter_stream(magicfire_system, emitter1, magicfire, 0);
 }
 else
 {
-  if global.object_direction==0
+  if (global.object_direction == 0)
   {
-    part_emitter_region(magicfire_system,emitter1,obj_mushroomman.x+15,obj_mushroomman.x+16,obj_mushroomman.y+25,obj_mushroomman.y+26,ps_shape_ellipse,1)
+    part_emitter_region(magicfire_system, emitter1, obj_mushroomman.x+15, obj_mushroomman.x+16, obj_mushroomman.y+25, obj_mushroomman.y+26, ps_shape_ellipse, 1)
   }
 
-  if global.object_direction==180
+  if (global.object_direction == 180)
   {
-    part_emitter_region(magicfire_system,emitter1,obj_mushroomman.x+34,obj_mushroomman.x+35,obj_mushroomman.y+25,obj_mushroomman.y+26,ps_shape_ellipse,1)
+    part_emitter_region(magicfire_system, emitter1, obj_mushroomman.x+34, obj_mushroomman.x+35, obj_mushroomman.y+25, obj_mushroomman.y+26, ps_shape_ellipse, 1)
   } 
 
 
-  if   !global.magicforce_flag
+  if (!global.magicforce_flag)
   {
-    part_emitter_stream(magicfire_system,emitter1,magicfire,0);
+    part_emitter_stream(magicfire_system, emitter1, magicfire, 0);
   }
 
-  if   global.magicforce_flag
+  if (global.magicforce_flag)
   {
-    part_emitter_stream(magicfire_system,emitter1,magicfire,50);
+    part_emitter_stream(magicfire_system, emitter1, magicfire, 50);
   }
 }
 
