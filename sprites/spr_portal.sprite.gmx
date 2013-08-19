@@ -6,19 +6,19 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>97</bbox_left>
-  <bbox_right>462</bbox_right>
-  <bbox_top>19</bbox_top>
-  <bbox_bottom>399</bbox_bottom>
+  <bbox_left>14</bbox_left>
+  <bbox_right>207</bbox_right>
+  <bbox_top>154</bbox_top>
+  <bbox_bottom>359</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>640</width>
-  <height>400</height>
+  <width>222</width>
+  <height>360</height>
   <frames>
-    <frame index="0">images\spr_midground_mushroom_2_0.png</frame>
+    <frame index="0">images\spr_portal_0.png</frame>
   </frames>
 </sprite>

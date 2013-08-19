@@ -99,11 +99,21 @@
     <sprites name="tileset">
       <sprite>sprites\spr_waves</sprite>
       <sprite>sprites\spr_thorns_tileable</sprite>
+      <sprite>sprites\spr_dirt_small</sprite>
       <sprite>sprites\spr_thorns_2</sprite>
+      <sprite>sprites\spr_lava_small_glow</sprite>
+      <sprite>sprites\spr_lava_small_cooldown</sprite>
+      <sprite>sprites\spr_lava_medium_bubble</sprite>
+      <sprite>sprites\spr_lava_small_bubble</sprite>
+      <sprite>sprites\spr_lava_small_flow</sprite>
+      <sprite>sprites\spr_lava_medium_glow</sprite>
+      <sprite>sprites\spr_lava_medium_cooldown</sprite>
       <sprite>sprites\spr_thorns_single</sprite>
+      <sprite>sprites\spr_lava_medium_flow</sprite>
       <sprite>sprites\spr_water_surface</sprite>
       <sprite>sprites\spr_water</sprite>
       <sprite>sprites\spr_dirt</sprite>
+      <sprite>sprites\spr_dirt_animate_modular</sprite>
       <sprite>sprites\spr_dirt_spawn</sprite>
       <sprite>sprites\spr_grass_spawn</sprite>
       <sprite>sprites\spr_fire</sprite>
@@ -170,6 +180,7 @@
       <sprite>sprites\spr_shroom_7</sprite>
       <sprite>sprites\spr_spiralplant</sprite>
       <sprite>sprites\spr_shroom_4</sprite>
+      <sprite>sprites\spr_portal</sprite>
       <sprite>sprites\spr_mushroom_9</sprite>
       <sprite>sprites\spr_shroom_10</sprite>
       <sprite>sprites\spr_flytrap_trapping</sprite>
@@ -244,6 +255,7 @@
     <objects name="environment">
       <object>objects\obj_shroom_4</object>
       <object>objects\obj_shroom_6</object>
+      <object>objects\obj_portal</object>
       <object>objects\obj_midground_mushroom_2</object>
       <object>objects\obj_shroom_9</object>
       <object>objects\obj_midground_mushroom_1</object>
@@ -260,12 +272,17 @@
     <objects name="tiles">
       <object>objects\obj_collision</object>
       <object>objects\obj_collision_slant</object>
+      <object>objects\obj_dirt_animate_modular</object>
       <object>objects\obj_dirt_animate</object>
+      <object>objects\obj_dirt_small</object>
+      <object>objects\obj_lava_cool</object>
       <object>objects\obj_dirt</object>
       <object>objects\obj_dirt_slant</object>
       <object>objects\obj_dirt_slant_spawn</object>
       <object>objects\obj_dirt_spawn</object>
       <object>objects\obj_fire</object>
+      <object>objects\obj_lava_small</object>
+      <object>objects\obj_lava_medium</object>
       <object>objects\obj_grass</object>
       <object>objects\obj_grass_2</object>
       <object>objects\obj_rocks</object>
@@ -340,8 +357,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\room_forest</room>
-    <room>rooms\test_level0</room>
     <room>rooms\room_hell_v2</room>
+    <room>rooms\test_level0</room>
     <room>rooms\room_hell</room>
     <room>rooms\room3</room>
     <room>rooms\rm_world1</room>
