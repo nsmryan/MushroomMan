@@ -101,6 +101,7 @@
       <sprite>sprites\spr_thorns_tileable</sprite>
       <sprite>sprites\spr_dirt_small</sprite>
       <sprite>sprites\spr_thorns_2</sprite>
+      <sprite>sprites\spr_lava_modular</sprite>
       <sprite>sprites\spr_lava_small_glow</sprite>
       <sprite>sprites\spr_lava_small_cooldown</sprite>
       <sprite>sprites\spr_lava_medium_bubble</sprite>
@@ -273,6 +274,7 @@
       <object>objects\obj_collision</object>
       <object>objects\obj_collision_slant</object>
       <object>objects\obj_dirt_animate_modular</object>
+      <object>objects\obj_lava_modular</object>
       <object>objects\obj_dirt_animate</object>
       <object>objects\obj_dirt_small</object>
       <object>objects\obj_lava_cool</object>
