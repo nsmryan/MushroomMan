@@ -25,7 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_start_room()
+            <string>swarm = 0;
+swarm.numRules = 0;
+swarm.rules = 0;
+
+
 </string>
           </argument>
         </arguments>

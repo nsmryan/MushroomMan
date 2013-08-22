@@ -28,7 +28,7 @@ if (keyboard_check_released(vk_shift))
     {
       dir = -1;
     }
-    physics_apply_impulse(x, y, dir * 3, -4);
+    physics_apply_impulse(x, y, dir * 2, -2);
     //physics_apply_local_force(0, 0, dir * 3, -4);
   }
   next_state = scr_falling;

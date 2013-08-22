@@ -217,6 +217,16 @@ else
 
 /* Set last used sprite, in case mushroomman dies this step. */
 global.last_sprite = image_index;
+
+
+
+off_end_left_high  = position_meeting(x,                y,                     obj_collision)
+off_end_left_mid   = position_meeting(x,                y + (sprite_height/2), obj_collision)
+off_end_right_high = position_meeting(x + sprite_width, y,                     obj_collision) 
+off_end_right_mid  = position_meeting(x + sprite_width, y + (sprite_height/2), obj_collision)
+off_end_left_low  = !position_meeting(x,                y + sprite_height,     obj_collision)
+off_end_right_low = !position_meeting(x + sprite_width, y + sprite_height,     obj_collision) 
+
 </string>
           </argument>
         </arguments>
@@ -670,6 +680,30 @@ if (global.mushroomman_debug)show_debug_message("initialized");
           <argument>
             <kind>0</kind>
             <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="68">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+global.droplet_flag = true;
+</string>
           </argument>
         </arguments>
       </action>

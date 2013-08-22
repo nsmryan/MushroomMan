@@ -45,11 +45,6 @@ else
 }
 
 //wall-grab
-off_end_left_high  = position_meeting(x,                y,                     obj_collision)
-off_end_left_mid   = position_meeting(x,                y + (sprite_height/2), obj_collision)
-off_end_right_high = position_meeting(x + sprite_width, y,                     obj_collision) 
-off_end_right_mid  = position_meeting(x + sprite_width, y + (sprite_height/2), obj_collision)
-
 if ((off_end_left_high && off_end_left_mid) || (off_end_right_high && off_end_right_mid))
 {
   vspeed = 0;

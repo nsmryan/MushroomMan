@@ -35,11 +35,6 @@ if place_meeting(x, y + vspeed + 1, obj_collision)
   return state_next;
 }
 
-off_end_left_low  = !position_meeting(x,                y + sprite_height,     obj_collision)
-off_end_left_mid  = !position_meeting(x,                y + (sprite_height/2), obj_collision)
-off_end_right_low = !position_meeting(x + sprite_width, y + sprite_height,     obj_collision) 
-off_end_right_mid = !position_meeting(x + sprite_width, y + (sprite_height/2), obj_collision)
-
 if (off_end_left_low && off_end_left_mid && off_end_right_low && off_end_right_mid)
 {
   global.onwall_flag = false;

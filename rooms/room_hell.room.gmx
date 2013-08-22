@@ -73,6 +73,12 @@ instance_create(obj_mushroomman.x, obj_mushroomman.y, obj_lastspawn);</code>
     <instance objName="obj_hell_6" x="1150" y="450" name="inst_22660082" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hell_7" x="2300" y="450" name="inst_ABF641EC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_hell_8" x="3449" y="450" name="inst_CDB1AB23" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_dirt_animate" x="672" y="384" name="inst_CFE31C43" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_surface" x="544" y="352" name="inst_C5A953D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_surface" x="512" y="352" name="inst_CFE8718E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_surface" x="480" y="352" name="inst_6AA749AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_surface" x="448" y="352" name="inst_43F36A27" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_water_surface" x="416" y="352" name="inst_5CEF3726" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision" x="544" y="832" name="inst_C57F23AD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision" x="576" y="832" name="inst_568FD1E7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision" x="608" y="832" name="inst_9B811913" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -377,12 +383,6 @@ instance_create(obj_mushroomman.x, obj_mushroomman.y, obj_lastspawn);</code>
     <instance objName="obj_collision" x="4480" y="896" name="inst_6D749E26" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision" x="4544" y="896" name="inst_DD1D2551" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision" x="4576" y="896" name="inst_BB4F1B7F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_dirt_animate" x="672" y="384" name="inst_CFE31C43" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_surface" x="544" y="352" name="inst_C5A953D0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_surface" x="512" y="352" name="inst_CFE8718E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_surface" x="480" y="352" name="inst_6AA749AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_surface" x="448" y="352" name="inst_43F36A27" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_water_surface" x="416" y="352" name="inst_5CEF3726" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision" x="576" y="356" name="inst_EE714E2A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision" x="544" y="356" name="inst_A351107B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision" x="512" y="356" name="inst_70DAAECF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
