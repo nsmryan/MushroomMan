@@ -311,6 +311,7 @@ instance_create(obj_mushroomman.x, obj_mushroomman.y, obj_lastspawn);</code>
     <instance objName="obj_collision" x="207" y="1455" name="inst_59058DA1" locked="0" code="" scaleX="2.96774196624756" scaleY="0.645161271095276" colour="4294967295" rotation="0"/>
     <instance objName="obj_collision" x="4112" y="462" name="inst_9326D6A1" locked="0" code="" scaleX="2.96875" scaleY="0.733333349227905" colour="4294967295" rotation="0"/>
     <instance objName="obj_lava_cool" x="4096" y="448" name="inst_30B79305" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_lava_medium" x="608" y="1632" name="inst_8C80D97C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
